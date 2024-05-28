@@ -8,13 +8,20 @@ using VisionAutomationFramework.Extensions;
 
 namespace VAF_Demo
 {
+    /// <summary>
+    /// DemoTests class provides examples of how to use the Vision Automation Framework (VAF)
+    /// to write automated UI tests. It includes basic interactions, assertions, and multi-step actions.
+    /// </summary>		 
     public class DemoTests
     {
-        // Placeholder testing property that is used inside test methods 
+        // Placeholder property used inside test methods 
+        // Holds PageAction scope based on which code will perform further actions and assertions
         PageActions TestingContext { get; set; }
 
         /// <summary>
-        /// Setup method, runs before each test
+        /// Setup method, runs before each test.
+        /// Initializes the Chrome driver and navigates to the website before starting individual tests. 
+        /// Also, it sets up the TestingContext property with the current page.
         /// </summary>
         [SetUp]
         public void Setup()
@@ -23,9 +30,9 @@ namespace VAF_Demo
                 .Should().DisplayPage<VAF_LandingPage>().That;
         }
 
-
         /// <summary>
-        /// Cleanup method, runs after each test
+        /// Cleanup method, runs after each test.
+        /// Ensures that the driver is closed after each individual test method, regardless of the test's outcome.
         /// </summary>
         [TearDown]
         public void Cleanup()
@@ -34,7 +41,9 @@ namespace VAF_Demo
         }
 
         /// <summary>
-        /// Open VAF site and click on Download Nuget button inside Home section
+        /// Opens the VAF site and clicks on the "Download Nuget" button in the Home section.
+        /// 
+        /// This basic method demonstrates how to navigate to a specific section and perform a basic action, such as clicking a button element.
         /// </summary>
         [Test]
         public void Test1()
@@ -45,7 +54,9 @@ namespace VAF_Demo
         }
 
         /// <summary>
-        /// Open VAF site and click on quick start guide link inside Features section
+        /// Opens the VAF site and clicks on the "Quick Start Guide" link in the Features section.
+        /// 
+        /// This method shows the user's ability to interact with different types of elements and perform actions on them.
         /// </summary>
         [Test]
         public void Test2()
@@ -56,7 +67,9 @@ namespace VAF_Demo
         }
 
         /// <summary>
-        /// Open VAF site and click on quick start guide link inside Features section
+        /// Opens the VAF site and verifies the "Testimonials" title in the Testimonials section.
+        /// 
+        /// This test demonstrates how to use assertions. By using the Should() method, you can verify that a label has a specific text value.
         /// </summary>
         [Test]
         public void Test3()
@@ -67,7 +80,10 @@ namespace VAF_Demo
         }
 
         /// <summary>
-        /// Open VAF site and click on quick start guide link inside Features section
+        /// Completes the Contact Us form and verifies the "Thank You" message.
+        /// 
+        /// This "complex" test method uses the TestingContext property in multiple steps to interact with various elements.
+        /// It introduces the AndAlso() method, which allows you to continue with assertions and actions on different elements within the same context.
         /// </summary>
         [Test]
         public void Test4()
