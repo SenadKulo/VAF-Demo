@@ -38,3 +38,8 @@ VAF package. For .NET Framework, set `<TargetFramework>net472</TargetFramework>`
 The contact form tests only send invalid forms, which the server rejects, so no email is sent. The test
 `ValidFormIsSent` sends a real message and therefore runs only against a local copy of the site
 (`VAF_DEMO_BASE_URL=http://localhost:5199`); against any other address it is skipped.
+
+The site accepts at most 5 contact form submissions per address in 10 minutes. One run of the contact
+tests sends the form 2 times (3 against a local site), so after two or three runs within 10 minutes the
+site answers *"Something went wrong"* instead of the form, and the tests fail with *"… element is not
+present"*. Wait 10 minutes, or restart the local site.

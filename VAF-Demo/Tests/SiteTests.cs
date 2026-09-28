@@ -17,14 +17,22 @@ namespace VAF_Demo.Tests
         [TearDown]
         public void Report()
         {
-            if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+            try
             {
-                SiteSteps.Browser?.LetsTakeScreenshot();
-            }
+                if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+                {
+                    SiteSteps.Browser?.LetsTakeScreenshot();
+                }
 
-            Testing.ConvertLogToHtml(TestContext.CurrentContext.WorkDirectory,
-                                     TestContext.CurrentContext.Test.Name);
-            SiteSteps.LetsCloseTheBrowser();
+                Testing.ConvertLogToHtml(TestContext.CurrentContext.WorkDirectory,
+                                         TestContext.CurrentContext.Test.Name);
+            }
+            finally
+            {
+                // Always close the browser, even when the report cannot be written; otherwise the
+                // browser stays open after the run.
+                SiteSteps.LetsCloseTheBrowser();
+            }
         }
     }
 
