@@ -72,14 +72,6 @@ namespace VAF_Demo.Steps
                     .That.AsTextAreaField().LetsInsert(message);
         }
 
-        public static void LetsCheckContactFormMessage<TMessage>(string text)
-            where TMessage : VisionAutomationFramework.Core.IElementContext, new()
-        {
-            Site.Should().HaveSection<VafSite.ContactForm>()
-                .That.Should().HaveElement<TMessage>()
-                    .That.AsLabelText().Should().HaveValue(text);
-        }
-
         public static void LetsSendTheContactForm()
         {
             Site.Should().HaveSection<VafSite.ContactForm>()

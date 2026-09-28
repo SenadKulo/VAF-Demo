@@ -103,9 +103,14 @@ namespace VAF_Demo.Tests
         {
             SiteSteps.LetsSendTheContactForm();
 
-            SiteSteps.LetsCheckContactFormMessage<VafSite.ContactForm.NameError>("Please enter your name.");
-            SiteSteps.LetsCheckContactFormMessage<VafSite.ContactForm.EmailError>("Please enter your email address.");
-            SiteSteps.LetsCheckContactFormMessage<VafSite.ContactForm.MessageError>("Please write a message.");
+            // AndAlso() after a check continues with the next element of the same section.
+            SiteSteps.Site.Should().HaveSection<VafSite.ContactForm>()
+                .That.Should().HaveElement<VafSite.ContactForm.NameError>()
+                    .That.AsLabelText().Should().HaveValue("Please enter your name.")
+                .AndAlso().Should().HaveElement<VafSite.ContactForm.EmailError>()
+                    .That.AsLabelText().Should().HaveValue("Please enter your email address.")
+                .AndAlso().Should().HaveElement<VafSite.ContactForm.MessageError>()
+                    .That.AsLabelText().Should().HaveValue("Please write a message.");
         }
 
         [Test]
@@ -114,8 +119,11 @@ namespace VAF_Demo.Tests
             SiteSteps.LetsFillTheContactForm("VAF Demo", "not-an-email", "Suggestion", "Too short");
             SiteSteps.LetsSendTheContactForm();
 
-            SiteSteps.LetsCheckContactFormMessage<VafSite.ContactForm.EmailError>("This does not look like an email address.");
-            SiteSteps.LetsCheckContactFormMessage<VafSite.ContactForm.MessageError>("The message should be between 10 and 5000 characters.");
+            SiteSteps.Site.Should().HaveSection<VafSite.ContactForm>()
+                .That.Should().HaveElement<VafSite.ContactForm.EmailError>()
+                    .That.AsLabelText().Should().HaveValue("This does not look like an email address.")
+                .AndAlso().Should().HaveElement<VafSite.ContactForm.MessageError>()
+                    .That.AsLabelText().Should().HaveValue("The message should be between 10 and 5000 characters.");
         }
 
         [Test]
