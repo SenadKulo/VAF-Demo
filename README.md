@@ -6,9 +6,9 @@ They show how a VAF suite is built in practice, in three layers:
 
 | Layer | File | What it holds |
 |---|---|---|
-| Elements | [`PageObjects/VafSite.cs`](VAF-Demo/PageObjects/VafSite.cs) | One page context for the whole site; the menu, page header, contact form … are sections with their elements nested inside |
-| Steps | [`Steps/SiteSteps.cs`](VAF-Demo/Steps/SiteSteps.cs) | `Lets…` methods that wrap a fluent chain into one business action |
-| Tests | [`Tests/SiteTests.cs`](VAF-Demo/Tests/SiteTests.cs) | Short NUnit tests that call the steps |
+| Page objects | [`PageObjects/VafSite.cs`](VAF-Demo/PageObjects/VafSite.cs) | One page context for the whole site; the menu, page header, contact form … are sections with their elements nested inside |
+| Shared steps | [`Steps/SiteSteps.cs`](VAF-Demo/Steps/SiteSteps.cs) | `Lets…` methods that wrap a fluent chain into one business action |
+| Tests | [`Tests/SiteTests.cs`](VAF-Demo/Tests/SiteTests.cs) | Short NUnit tests that call the shared steps |
 
 The tests cover navigation (menu, Quick start, Guide), reading and checking text, links, buttons, text
 inputs, a text area, a select box and server-side form validation. A failed test leaves a screenshot and

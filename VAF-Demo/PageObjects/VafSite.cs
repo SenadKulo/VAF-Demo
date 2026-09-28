@@ -4,7 +4,7 @@ using VisionAutomationFramework.Core;
 namespace VAF_Demo.PageObjects
 {
     /// <summary>
-    /// Layer 1 — elements. The whole site is one page context; every part of it (menu, page header,
+    /// Layer 1 — page objects: the app, its sections and their elements. The whole site is one page context; every part of it (menu, page header,
     /// contact form, …) is a section with its elements nested inside. An element's locator is
     /// looked up inside its section, so it can stay short.
     /// </summary>

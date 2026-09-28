@@ -8,7 +8,7 @@ using VisionAutomationFramework.Extensions;
 namespace VAF_Demo.Steps
 {
     /// <summary>
-    /// Layer 2 — steps. Each step wraps a fluent chain into one business action, starting from the
+    /// Layer 2 — shared steps. Each step wraps a fluent chain into one business action, starting from the
     /// saved page context. Tests call steps, so a changed page means one changed step, not every test.
     /// </summary>
     public static class SiteSteps

@@ -9,7 +9,7 @@ using VisionAutomationFramework.Extensions;
 namespace VAF_Demo.Tests
 {
     /// <summary>
-    /// Layer 3 — tests. Short, they read as the steps they call. The browser opens before and
+    /// Layer 3 — tests. Short, they read as the shared steps they call. The browser opens before and
     /// closes after each test; a failed test leaves a screenshot and an HTML report.
     /// </summary>
     public abstract class SiteTest
