@@ -1,7 +1,7 @@
 # Vision Automation Framework — demo
 
 Browser tests for [visionautomationframework.com](https://www.visionautomationframework.com), written with
-[Vision Automation Framework](https://www.nuget.org/packages/VisionAutomationFramework) (VAF) **3.0 beta**.
+[Vision Automation Framework](https://www.nuget.org/packages/VisionAutomationFramework) (VAF) **3.0**.
 They show how a VAF suite is built in practice, in three layers:
 
 | Layer | File | What it holds |

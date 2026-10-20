@@ -45,10 +45,10 @@ namespace VAF_Demo.Steps
                     .That.AsLink().LetsClick();
         }
 
-        public static void LetsOpenTheBetaPageFromQuickStart()
+        public static void LetsOpenTheMigrationPageFromQuickStart()
         {
             Site.Should().HaveSection<VafSite.QuickStartSteps>()
-                .That.Should().HaveElement<VafSite.QuickStartSteps.BetaLink>()
+                .That.Should().HaveElement<VafSite.QuickStartSteps.MigrationLink>()
                     .That.AsLink().LetsClick();
         }
 

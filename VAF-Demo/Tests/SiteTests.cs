@@ -65,11 +65,11 @@ namespace VAF_Demo.Tests
         }
 
         [Test]
-        public void QuickStartLinksToTheBetaPage()
+        public void QuickStartLinksToTheMigrationPage()
         {
             SiteSteps.LetsGoToQuickStartFromTheMenu();
-            SiteSteps.LetsOpenTheBetaPageFromQuickStart();
-            SiteSteps.LetsCheckThePageTitle("VAF 3.0 beta");
+            SiteSteps.LetsOpenTheMigrationPageFromQuickStart();
+            SiteSteps.LetsCheckThePageTitle("Migrating to VAF 3.0");
         }
 
         [Test]

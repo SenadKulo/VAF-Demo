@@ -76,7 +76,7 @@ namespace VAF_Demo.PageObjects
                 public By ElementFindMechanism { get; set; } = By.CssSelector("h2.h4");
             }
 
-            public class BetaLink : IElementContext
+            public class MigrationLink : IElementContext
             {
                 public By ElementFindMechanism { get; set; } = By.CssSelector(".alert-info a[href='/migrating-to-3']");
             }
