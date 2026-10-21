@@ -1,0 +1,38 @@
+name: Tests
+
+# Runs the demo against the live site on every push and pull request, and once a week, so a change
+# on the site or in a new Chrome shows up even when nothing changes here.
+on:
+  push:
+    branches: [master]
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    env:
+      VAF_ChromeArguments: --headless=new
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Test
+        run: dotnet test --logger trx --results-directory TestResults
+
+      # Screenshots, HTML reports and the .trx file of a failed run.
+      - name: Upload results
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            TestResults/
+            VAF-Demo/bin/Debug/net10.0/*.png
+            VAF-Demo/bin/Debug/net10.0/*.html
