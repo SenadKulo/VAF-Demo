@@ -34,7 +34,7 @@ dotnet test --filter TestCategory=Scenarios
 dotnet test --filter TestCategory=Site
 ```
 
-A run of all 33 tests takes about four minutes: every test opens its own Chrome. The tests run one after
+A run of all 36 tests takes about four minutes: every test opens its own Chrome. The tests run one after
 another, not in parallel: they share the session state in [`SharedContext`](VAF-Demo/Common/SharedContext.cs).
 
 The project is what Visual Studio's *NUnit Test Project* template creates (.NET 10, NUnit 4) plus the VAF
@@ -81,6 +81,22 @@ public static class FormsPage
 An element is looked up inside its section, so its locator can stay short. The practice pages give every
 element an `id`, which survives changes to the layout and the text. `PracticeLayout` holds the sections every
 practice page has (breadcrumb, page header).
+
+### Good and bad locators
+
+[Good and bad locators](https://www.visionautomationframework.com/practice/mapping) shows the same order summary
+twice: built for testing (`id`, `data-test`) and built without it (generated classes, nested `div`s, text only,
+an `id` that changes on every load). `?version=2` shows the same screen after a redesign.
+
+- [`MappingPage`](VAF-Demo/PageObjects/MappingPage.cs) maps the first one; `StableLocatorsSurviveTheRedesign` in
+  [`MappingTests`](VAF-Demo/Tests/Native/MappingTests.cs) passes on both versions.
+- [`MappingPageFragile`](VAF-Demo/PageObjects/MappingPageFragile.cs) maps the second one the way not to, with the
+  reason on every locator. `FragileLocatorsWorkUntilTheRedesign` passes on version 1; change its path to
+  `/practice/mapping?version=2` and run it to see each locator break.
+
+Prefer, from the most to the least stable: `id` and `data-test` → `name`, `label`, ARIA → CSS class → text →
+position and absolute XPath → generated ids and classes. When a page offers only the last ones, ask its
+developers for an `id` or a `data-test`.
 
 ## Common: test base and shared context
 
