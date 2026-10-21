@@ -3,7 +3,7 @@ using VisionAutomationFramework.Core;
 
 namespace VAF_Demo.PageObjects
 {
-    /// <summary>/practice/forms: a sign-up form that shows back what it received.</summary>
+    /// <summary><see href="https://www.visionautomationframework.com/practice/forms">/practice/forms</see>: a sign-up form that shows back what it received.</summary>
     public static class FormsPage
     {
         /// <summary>The form, with the error messages the server puts next to the fields.</summary>

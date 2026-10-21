@@ -3,7 +3,7 @@ using VisionAutomationFramework.Core;
 
 namespace VAF_Demo.PageObjects
 {
-    /// <summary>/practice/slider: a range 0–100 and the number it shows.</summary>
+    /// <summary><see href="https://www.visionautomationframework.com/practice/slider">/practice/slider</see>: a range 0–100 and the number it shows.</summary>
     public static class SliderPage
     {
         public class Volume : ISectionContext

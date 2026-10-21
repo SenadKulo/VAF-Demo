@@ -3,7 +3,7 @@ using VisionAutomationFramework.Core;
 
 namespace VAF_Demo.PageObjects
 {
-    /// <summary>/practice/alerts: buttons that open the browser's dialogs, and a line with the answer.</summary>
+    /// <summary><see href="https://www.visionautomationframework.com/practice/alerts">/practice/alerts</see>: buttons that open the browser's dialogs, and a line with the answer.</summary>
     public static class AlertsPage
     {
         public class Dialogs : ISectionContext

@@ -3,7 +3,7 @@ using VisionAutomationFramework.Core;
 
 namespace VAF_Demo.PageObjects
 {
-    /// <summary>/practice/tables: 25 people, 10 per page, with a filter and sortable columns.</summary>
+    /// <summary><see href="https://www.visionautomationframework.com/practice/tables">/practice/tables</see>: 25 people, 10 per page, with a filter and sortable columns.</summary>
     public static class TablesPage
     {
         public class Filter : ISectionContext

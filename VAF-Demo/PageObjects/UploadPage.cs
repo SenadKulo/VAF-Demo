@@ -3,7 +3,7 @@ using VisionAutomationFramework.Core;
 
 namespace VAF_Demo.PageObjects
 {
-    /// <summary>/practice/upload: the server shows the name and size of what it received, and keeps nothing.</summary>
+    /// <summary><see href="https://www.visionautomationframework.com/practice/upload">/practice/upload</see>: the server shows the name and size of what it received, and keeps nothing.</summary>
     public static class UploadPage
     {
         public class Form : ISectionContext

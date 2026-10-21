@@ -4,7 +4,7 @@ using VisionAutomationFramework.Core;
 namespace VAF_Demo.PageObjects
 {
     /// <summary>
-    /// /practice/date-pickers-bootstrap3: a page with its own Bootstrap 3 layout, so it has no
+    /// <see href="https://www.visionautomationframework.com/practice/date-pickers-bootstrap3">/practice/date-pickers-bootstrap3</see>: a page with its own Bootstrap 3 layout, so it has no
     /// breadcrumb or page header. The VAF element is the picker's div.input-group.date.
     /// </summary>
     public static class Bootstrap3DatePickerPage

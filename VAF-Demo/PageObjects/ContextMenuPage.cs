@@ -3,7 +3,7 @@ using VisionAutomationFramework.Core;
 
 namespace VAF_Demo.PageObjects
 {
-    /// <summary>/practice/context-menu: a menu the page draws on right click.</summary>
+    /// <summary><see href="https://www.visionautomationframework.com/practice/context-menu">/practice/context-menu</see>: a menu the page draws on right click.</summary>
     public static class ContextMenuPage
     {
         public class PageMenu : ISectionContext

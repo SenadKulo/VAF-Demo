@@ -3,7 +3,7 @@ using VisionAutomationFramework.Core;
 
 namespace VAF_Demo.PageObjects
 {
-    /// <summary>/practice/navigation: a drop-down menu and tabs.</summary>
+    /// <summary><see href="https://www.visionautomationframework.com/practice/navigation">/practice/navigation</see>: a drop-down menu and tabs.</summary>
     public static class NavigationPage
     {
         public class AccountMenu : ISectionContext

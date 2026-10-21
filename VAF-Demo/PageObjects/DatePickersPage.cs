@@ -3,7 +3,7 @@ using VisionAutomationFramework.Core;
 
 namespace VAF_Demo.PageObjects
 {
-    /// <summary>/practice/date-pickers: flatpickr 4. The VAF element is flatpickr's wrapper around the input.</summary>
+    /// <summary><see href="https://www.visionautomationframework.com/practice/date-pickers">/practice/date-pickers</see>: flatpickr 4. The VAF element is flatpickr's wrapper around the input.</summary>
     public static class DatePickersPage
     {
         public class Single : ISectionContext

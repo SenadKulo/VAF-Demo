@@ -3,7 +3,7 @@ using VisionAutomationFramework.Core;
 
 namespace VAF_Demo.PageObjects
 {
-    /// <summary>/practice/loading: results behind a spinner, and a message that appears later.</summary>
+    /// <summary><see href="https://www.visionautomationframework.com/practice/loading">/practice/loading</see>: results behind a spinner, and a message that appears later.</summary>
     public static class LoadingPage
     {
         /// <summary>The spinner; VAF waits for it to disappear once it is set with LetsUseLoader.</summary>

@@ -3,7 +3,7 @@ using VisionAutomationFramework.Core;
 
 namespace VAF_Demo.PageObjects
 {
-    /// <summary>/practice/windows: a link that opens a new tab.</summary>
+    /// <summary><see href="https://www.visionautomationframework.com/practice/windows">/practice/windows</see>: a link that opens a new tab.</summary>
     public static class WindowsPage
     {
         /// <summary>The browser title of this page; windows are found by title.</summary>

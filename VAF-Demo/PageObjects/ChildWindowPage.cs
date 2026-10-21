@@ -3,7 +3,7 @@ using VisionAutomationFramework.Core;
 
 namespace VAF_Demo.PageObjects
 {
-    /// <summary>/practice/windows/child: the page that opens in the new tab.</summary>
+    /// <summary><see href="https://www.visionautomationframework.com/practice/windows/child">/practice/windows/child</see>: the page that opens in the new tab.</summary>
     public static class ChildWindowPage
     {
         public const string Title = "Practice: child window — Vision Automation Framework";

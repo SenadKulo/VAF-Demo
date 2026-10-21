@@ -3,7 +3,7 @@ using VisionAutomationFramework.Core;
 
 namespace VAF_Demo.PageObjects
 {
-    /// <summary>/practice: a card for every practice page.</summary>
+    /// <summary><see href="https://www.visionautomationframework.com/practice">/practice</see>: a card for every practice page.</summary>
     public static class OverviewPage
     {
         public class Cards : ISectionContext
