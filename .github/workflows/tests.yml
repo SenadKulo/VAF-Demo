@@ -15,7 +15,8 @@ jobs:
     runs-on: windows-latest
     timeout-minutes: 20
     env:
-      VAF_ChromeArguments: --headless=new
+      # A desktop-sized window: below 992 px the site folds its menu, which Tests/Site use.
+      VAF_ChromeArguments: --headless=new --window-size=1920,1080
     steps:
       - uses: actions/checkout@v4
 

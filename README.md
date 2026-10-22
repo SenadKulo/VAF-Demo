@@ -45,10 +45,13 @@ package. For .NET Framework, set `<TargetFramework>net472</TargetFramework>`.
 | Environment variable | Default | Meaning |
 |---|---|---|
 | `VAF_DEMO_BASE_URL` | `https://www.visionautomationframework.com` | The site under test |
-| `VAF_ChromeArguments` | — | Extra Chrome arguments, e.g. `--headless=new` to run without a window |
+| `VAF_ChromeArguments` | — | Extra Chrome arguments, e.g. `--headless=new --window-size=1920,1080` to run without a window |
 | `VAF_ElementWaitTimeout` | 10 | Seconds VAF waits for an element |
 
-In PowerShell: `$env:VAF_ChromeArguments = "--headless=new"; dotnet test`.
+In PowerShell: `$env:VAF_ChromeArguments = "--headless=new --window-size=1920,1080"; dotnet test`.
+
+Give headless Chrome a window size: without one its window is about 800 px wide, and below 992 px the
+site folds its menu behind a button, so the tests in `Tests/Site` do not find the menu links.
 
 ## Page objects
 
